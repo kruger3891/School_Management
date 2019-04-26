@@ -3,49 +3,32 @@ package Project.School_Management.Models;
 import java.util.ArrayList;
 import java.util.List;
 
-import Project.School_Management.DataAccess.CourseDaoList;
+import Project.School_Management.DataAccess.CourseDao_impl;
 
 public class Course {
 
-	private static int Sequence = 1;
-	private final int CourseID;
-	private String CourseName;
-	private int WeekDuration;
+	private static int sequence = 1;
+	private final int courseId;
+	private String courseName;
+	private int weekDuration;
 	private List<Student> students = new ArrayList<>();
 
 	
+	
 	public Course(String courseName, int weekDuration) {
-		CourseID = Sequence++;
-		CourseName = courseName;
-		WeekDuration = weekDuration;
+		super();
+		courseId = sequence++;
+		this.courseName = courseName;
+		this.weekDuration = weekDuration;
 		setStudents(new ArrayList<>());
 	}
-	public void AddStudentToCourse(Student student) {
-
-	}
-
-	public void RemoveStudentFromCourse(Student student) {
-
-	}
-
+	
 	public int getCourseID() {
-		return CourseID;
+		return courseId;
 	}
 
 	public String getCourseName() {
-		return CourseName;
-	}
-
-	public void setCourseName(String courseName) {
-		CourseName = courseName;
-	}
-
-	public int getWeekDuration() {
-		return WeekDuration;
-	}
-
-	public void setWeekDuration(int weekDuration) {
-		WeekDuration = weekDuration;
+		return courseName;
 	}
 
 	public List<Student> getStudents() {
@@ -56,24 +39,42 @@ public class Course {
 		this.students = students;
 	}
 
+	public static int getSequence() {
+		return sequence;
+	}
+	public static void setSequence(int sequence) {
+		Course.sequence = sequence;
+	}
+	public int getWeekDuration() {
+		return weekDuration;
+	}
+	public void setWeekDuration(int weekDuration) {
+		this.weekDuration = weekDuration;
+	}
+	public int getCourseId() {
+		return courseId;
+	}
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
 	public void ToPrint() {
-		System.out.println(CourseID + " " + this.getCourseName() + " " + this.getWeekDuration()+" "+this.getStudents());
+		System.out.println(courseId + " " + this.getCourseName() + " " + this.getWeekDuration());
 
 	}
 
 	@Override
 	public String toString() {
-		return "Course [CourseID=" + CourseID + ", CourseName=" + CourseName + ", WeekDuration=" + WeekDuration
-				+ ", students=" + this.getStudents() + "]";
+		return "Course [CourseID=" + courseId + ", CourseName=" + courseName + ", WeekDuration=" + weekDuration
+				+ ", students=" + students + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + CourseID;
-		result = prime * result + ((CourseName == null) ? 0 : CourseName.hashCode());
-		result = prime * result + WeekDuration;
+		result = prime * result + courseId;
+		result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
+		result = prime * result + weekDuration;
 		result = prime * result + ((students == null) ? 0 : students.hashCode());
 		return result;
 	}
@@ -87,14 +88,14 @@ public class Course {
 		if (getClass() != obj.getClass())
 			return false;
 		Course other = (Course) obj;
-		if (CourseID != other.CourseID)
+		if (courseId != other.courseId)
 			return false;
-		if (CourseName == null) {
-			if (other.CourseName != null)
+		if (courseName == null) {
+			if (other.courseName != null)
 				return false;
-		} else if (!CourseName.equals(other.CourseName))
+		} else if (!courseName.equals(other.courseName))
 			return false;
-		if (WeekDuration != other.WeekDuration)
+		if (weekDuration != other.weekDuration)
 			return false;
 		if (students == null) {
 			if (other.students != null)
@@ -103,6 +104,6 @@ public class Course {
 			return false;
 		return true;
 	}
-
+	
 	
 }

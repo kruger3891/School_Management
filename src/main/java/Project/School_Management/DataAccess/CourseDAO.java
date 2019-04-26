@@ -16,6 +16,5 @@ public interface CourseDAO {
 
 	boolean removeCourse(Course course);
 
-	void ToPrintCourse(Course course);
-
+	void toPrintCourse(Course course);
 }

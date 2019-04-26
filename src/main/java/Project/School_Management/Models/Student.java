@@ -2,68 +2,72 @@ package Project.School_Management.Models;
 
 public class Student {
 
-	private static int Sequence = 1000;
-	private final int ID;
-	private String Name;
-	private String Email;
-	private String Address;
-	private String Course;
+	private static int sequence = 1000;
+	private final int id;
+	private String name;
+	private String email;
+	private String address;
+	private String course;
 
-	@Override
-	public String toString() {
-
-		return "Student [ID=" + ID + ", Name=" + Name + ", Email=" + Email + ", Address=" + Address + ", Course="
-				+ Course + "]";
-	}
 
 	public Student(String name, String email, String address, String course) {
 		super();
-		this.ID = ++Sequence;
-		this.Name = name;
-		this.Email = email;
-		this.Address = address;
-		this.Course = course;
+		this.id = ++sequence;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.course = course;
 	}
 
 	public int getID() {
-		return ID;
+		return id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+	public String getCourse() {
+		return course;
+	}
+
+
+	public int getId() {
+		return id;
 	}
 
 	public void setName(String name) {
-		Name = name;
-	}
-
-	public String getEmail() {
-		return Email;
+		this.name = name;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
-	}
-
-	public String getAddress() {
-		return Address;
+		this.email = email;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
-	}
-
-	public String getCourse() {
-		return Course;
+		this.address = address;
 	}
 
 	public void setCourse(String course) {
-		Course = course;
+		this.course = course;
 	}
 
-	public void ToPrint() {
+	public void toPrint() {
 
-		System.out.println("[ " +"Student ID"+" "+this.getID() + "Student Name"+ " " + this.Name + "Student Email"+" " + this.Email + "Student Address"+" " + this.Address +"]");
+		System.out.println("[ " +"Student ID"+" "+this.getID() +" " +"Student Name"+ " " + this.name + "Student Email"+" " + this.email + "Student Address"+" " + this.address +"]");
 
 	}
 
@@ -71,11 +75,11 @@ public class Student {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Address == null) ? 0 : Address.hashCode());
-		result = prime * result + ((Course == null) ? 0 : Course.hashCode());
-		result = prime * result + ((Email == null) ? 0 : Email.hashCode());
-		result = prime * result + ID;
-		result = prime * result + ((Name == null) ? 0 : Name.hashCode());
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((course == null) ? 0 : course.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -88,29 +92,35 @@ public class Student {
 		if (getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
-		if (Address == null) {
-			if (other.Address != null)
+		if (address == null) {
+			if (other.address != null)
 				return false;
-		} else if (!Address.equals(other.Address))
+		} else if (!address.equals(other.address))
 			return false;
-		if (Course == null) {
-			if (other.Course != null)
+		if (course == null) {
+			if (other.course != null)
 				return false;
-		} else if (!Course.equals(other.Course))
+		} else if (!course.equals(other.course))
 			return false;
-		if (Email == null) {
-			if (other.Email != null)
+		if (email == null) {
+			if (other.email != null)
 				return false;
-		} else if (!Email.equals(other.Email))
+		} else if (!email.equals(other.email))
 			return false;
-		if (ID != other.ID)
+		if (id != other.id)
 			return false;
-		if (Name == null) {
-			if (other.Name != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!Name.equals(other.Name))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", course="
+				+ course + "]";
 	}
 	
 }

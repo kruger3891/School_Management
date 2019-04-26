@@ -8,7 +8,7 @@ public interface StudentDAO {
 
 	Student saveStudent(Student student);
 
-	Student findByEmail(String email);
+	List<Student> findByEmail(String email);
 
 	List<Student> findByName(String name);
 
@@ -18,7 +18,5 @@ public interface StudentDAO {
 
 	boolean deleteStudent(Student student);
 	
-	Student AddToCourse(String name);
 
-	
 }
