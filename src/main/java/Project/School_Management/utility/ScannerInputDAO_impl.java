@@ -3,23 +3,23 @@ package Project.School_Management.utility;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ScannerInputDAO_impl implements ScannerInputDAO{
+public class ScannerInputDAO_impl implements ScannerInputDAO {
 
 	private Scanner in = new Scanner(System.in);
 
 	@Override
 	public String getString() {
-		
+
 		return in.nextLine();
 	}
 
 	@Override
 	public int getInt() {
-		
+
 		return in.nextInt();
 	}
-	
-	public  boolean PlaySystemAgain() {
+
+	public boolean PlaySystemAgain() {
 
 		String upperCaseString = in.nextLine().toUpperCase();
 		switch (upperCaseString) {
@@ -31,8 +31,8 @@ public class ScannerInputDAO_impl implements ScannerInputDAO{
 			return false;
 		}
 	}
-	
-	public  int inputNumber(int startPosition, int endPosition) {
+
+	public int inputNumber(int startPosition, int endPosition) {
 		int number = 0;
 		boolean run = true;
 		while (run) {
@@ -58,5 +58,5 @@ public class ScannerInputDAO_impl implements ScannerInputDAO{
 		}
 		return number;
 	}
-	
+
 }

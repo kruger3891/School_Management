@@ -5,14 +5,13 @@ import Project.School_Management.Models.Course;
 import Project.School_Management.utility.ScannerInputDAO;
 import Project.School_Management.utility.ScannerInputDAO_impl;
 
-
 public class CoursDaoList_Control {
 
-	private  ScannerInputDAO scanerInput=new ScannerInputDAO_impl();
-	private  CourseDao_impl theCoursesList = new CourseDao_impl();
+	private ScannerInputDAO scanerInput = new ScannerInputDAO_impl();
+	private CourseDao_impl theCoursesList = new CourseDao_impl();
 
-	public  CourseDao_impl CreatNewCourse() {
-		
+	public CourseDao_impl CreatNewCourse() {
+
 		Course cor = new Course("C++", 6);
 		System.out.println("Pls Add The Course Name ");
 		String courseName = scanerInput.getString();
@@ -28,7 +27,7 @@ public class CoursDaoList_Control {
 
 	}
 
-	public  CourseDao_impl findById() {
+	public CourseDao_impl findById() {
 		System.out.println("Enter the Course id:");
 		int id = scanerInput.getInt();
 		theCoursesList.findById(id);
@@ -36,7 +35,7 @@ public class CoursDaoList_Control {
 		return theCoursesList;
 	}
 
-	public  CourseDao_impl findByName() {
+	public CourseDao_impl findByName() {
 		System.out.println("Enter the course Name:");
 		String name = scanerInput.getString();
 		theCoursesList.findByName(name);
@@ -44,11 +43,11 @@ public class CoursDaoList_Control {
 
 	}
 
-	public  void findAll() {
+	public void findAll() {
 		System.out.println(theCoursesList.findAll());
 	}
 
-	public  CourseDao_impl removeCourse() {
+	public CourseDao_impl removeCourse() {
 		System.out.println("by id please enter the Course id ");
 		int id = scanerInput.getInt();
 		theCoursesList.toPrintCourse(theCoursesList.findById(id));
@@ -56,11 +55,9 @@ public class CoursDaoList_Control {
 		theCoursesList.removeCourse(course);
 		return theCoursesList;
 	}
-	
-	
-	
-	public  CourseDao_impl AddStudentToCourse () {
-		
-		return theCoursesList;	
+
+	public CourseDao_impl AddStudentToCourse() {
+
+		return theCoursesList;
 	}
 }

@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 import Project.School_Management.Models.Student;
 
-
 public class StudentDao_impl implements StudentDAO {
 
 	private List<Student> StudentList = new ArrayList<Student>();
@@ -41,7 +40,7 @@ public class StudentDao_impl implements StudentDAO {
 		}
 		return result;
 	}
-	
+
 	@Override
 	public Student findById(int id) {
 		for (Student std : StudentList) {

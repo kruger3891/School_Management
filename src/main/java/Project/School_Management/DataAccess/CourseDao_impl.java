@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Project.School_Management.Models.Course;
 
-
 public class CourseDao_impl implements CourseDAO {
-
 
 	static List<Course> CoursesList = new ArrayList<>();
 

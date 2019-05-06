@@ -9,7 +9,6 @@ public class Student {
 	private String address;
 	private String course;
 
-
 	public Student(String name, String email, String address, String course) {
 		super();
 		this.id = ++sequence;
@@ -27,23 +26,17 @@ public class Student {
 		return name;
 	}
 
-
 	public String getEmail() {
 		return email;
 	}
-
-
 
 	public String getAddress() {
 		return address;
 	}
 
-
-
 	public String getCourse() {
 		return course;
 	}
-
 
 	public int getId() {
 		return id;
@@ -67,7 +60,8 @@ public class Student {
 
 	public void toPrint() {
 
-		System.out.println("[ " +"Student ID"+" "+this.getID() +" " +"Student Name"+ " " + this.name + "Student Email"+" " + this.email + "Student Address"+" " + this.address +"]");
+		System.out.println("[ " + "Student ID" + " " + this.getID() + " " + "Student Name" + " " + this.name
+				+ "Student Email" + " " + this.email + "Student Address" + " " + this.address + "]");
 
 	}
 
@@ -122,5 +116,5 @@ public class Student {
 		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", course="
 				+ course + "]";
 	}
-	
+
 }

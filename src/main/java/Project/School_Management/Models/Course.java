@@ -13,8 +13,6 @@ public class Course {
 	private int weekDuration;
 	private List<Student> students = new ArrayList<>();
 
-	
-	
 	public Course(String courseName, int weekDuration) {
 		super();
 		courseId = sequence++;
@@ -22,7 +20,7 @@ public class Course {
 		this.weekDuration = weekDuration;
 		setStudents(new ArrayList<>());
 	}
-	
+
 	public int getCourseID() {
 		return courseId;
 	}
@@ -42,21 +40,27 @@ public class Course {
 	public static int getSequence() {
 		return sequence;
 	}
+
 	public static void setSequence(int sequence) {
 		Course.sequence = sequence;
 	}
+
 	public int getWeekDuration() {
 		return weekDuration;
 	}
+
 	public void setWeekDuration(int weekDuration) {
 		this.weekDuration = weekDuration;
 	}
+
 	public int getCourseId() {
 		return courseId;
 	}
+
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
+
 	public void ToPrint() {
 		System.out.println(courseId + " " + this.getCourseName() + " " + this.getWeekDuration());
 
@@ -104,6 +108,5 @@ public class Course {
 			return false;
 		return true;
 	}
-	
-	
+
 }
